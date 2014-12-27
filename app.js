@@ -5,6 +5,18 @@
 		this.products = gems;
 	});
 
+	app.controller('PanelController', function() {
+		this.tab = 1;
+		this.selectTab = function(setTab) {
+			alert(setTab);
+			this.tab = setTab;
+		};
+
+		this.isSelected = function(checkTab) {
+			return this.tab === checkTab;
+		};
+	});
+
 	var gems = [
 		{
 			name: 'Gold fish',
@@ -14,6 +26,13 @@
 			images : [{
 				full: 'image0.jpg'
 			}],
+			reviews: [
+			{
+				stars:5,
+				body: "I Love this product",
+				author: "joe@example.com"
+			}
+			],
 			soldOut: true
 		},
 		{
@@ -24,6 +43,14 @@
 			images : [{
 				full: 'image1.jpg'
 			}],
+
+			reviews: [
+			{
+				stars:3,
+				body: "This is good product and i really like it. It is the best",
+				author: "joe@example.com"
+			}
+			],
 			soldOut: true
 		},
 		{
@@ -34,6 +61,13 @@
 			images : [{
 				full: 'image2.jpg'
 			}],
+			reviews: [
+			{
+				stars:3,
+				body: "This is a great product",
+				author: "pani@example.com"
+			}
+			],
 			soldOut: true
 		}
 
