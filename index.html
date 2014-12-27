@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html ng-app="store">
+ <head>
+  <link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+ </head>
+ <body ng-controller ="StoreController as store">
+  <script type="text/javascript" src ="angular.min.js"></script>
+   <script type="text/javascript" src ="app.js"></script>
+   <p> {{"hello" + " you" }}</p>
+   <div ng-repeat ="product in store.products | orderBy: '-price'">
+   		<h1>{{product.name | limitTo:10}}</h1>
+   		<h2>{{product.price | currency}}</h2>
+   		<p> {{product.description | uppercase}} </p>
+   		<img ng-src = "{{product.images[0].full}}"/>
+   		<button ng-show ="product.canPurchase"> Add to cart</button>
+	
+	<section ng-init = "tab = 1">
+		<ul class = "nav nav-pills">
+			<li> <a href ng-click ="tab = 1"> Description</a></li>
+			<li> <a href ng-click ="tab = 2"> Specification</a></li>
+			<li> <a href ng-click ="tab = 3"> Reviews</a></li>
+		</ul>
+
+	<div class = "panel" ng-show = "tab === 1">
+		<h4> Description</h4>
+		<p> {{product.description}} </p>
+	</div>
+
+	<div class = "panel" ng-show = "tab === 2">
+		<h4> Specification</h4>
+		<p> None yet </p>
+	</div>
+
+	<div class = "panel" ng-show = "tab === 3">
+		<h4> Reviews</h4>
+		<p> None yet </p>
+	</div>
+	</section>
+	
+   </div> 
+
+ </body>
