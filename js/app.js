@@ -19,7 +19,7 @@
 		}
 	});
 
-	
+		
 	app.controller("PanelController", function() {
 		//alert("In panel");
 		this.tab = 1;
@@ -33,64 +33,12 @@
 		};
 	});
 
-	app.controller('StoreController', function() {
-		this.products = gems;
-	});
-
-
-	var gems = [
-		{
-			name: 'Gold fish',
-			price: 2.95,
-			description: 'This is a rare gem',
-			canPurchase: true,
-			images : [{
-				full: 'images/image0.jpg'
-			}],
-			reviews: [
-			{
-				stars:5,
-				body: "I Love this product",
-				author: "joe@example.com"
-			}
-			],
-			soldOut: true
-		},
-		{
-			name: 'Pygmy Gold Fish',
-			price: 4.9,
-			description: 'This is a new gem',
-			canPurchase: true,
-			images : [{
-				full: 'images/image1.jpg'
-			}],
-
-			reviews: [
-			{
-				stars:3,
-				body: "This is good product and i really like it. It is the best",
-				author: "joe@example.com"
-			}
-			],
-			soldOut: true
-		},
-		{
-			name: 'Salmon',
-			price: 3.95,
-			description: 'This is a greaat gem',
-			canPurchase: true,
-			images : [{
-				full: 'images/image2.jpg'
-			}],
-			reviews: [
-			{
-				stars:3,
-				body: "This is a great product",
-				author: "pani@example.com"
-			}
-			],
-			soldOut: true
-		}
-
-	]
+	app.controller('StoreController', ['$http', function($http) {
+		var storeProducts = this;
+		//this.products = gems;
+		storeProducts.products = [];
+		$http.get('products.json').success(function(data) {
+			storeProducts.products = data;
+		});
+	}]);
 })();

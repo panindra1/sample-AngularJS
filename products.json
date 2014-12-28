@@ -1,0 +1,55 @@
+[
+	{
+			"name": "Gold fish",
+			"price": 2.95,
+			"description": "This is a rare gem",
+			"canPurchase": true,
+			"images" : [{
+				"full": "images/image0.jpg"
+			}],
+			"reviews": [
+			{
+				"stars":5,
+				"body": "I Love this product",
+				"author": "joe@example.com"
+			}
+			],
+			"soldout": true
+		},
+		{
+			"name": "Pygmy Gold Fish",
+			"price": 4.9,
+			"description": "This is a new gem",
+			"canPurchase": true,
+			"images" : [{
+				"full": "images/image1.jpg"
+			}],
+
+			"reviews": [
+			{
+				"stars":3,
+				"body": "This is good product and i really like it. It is the best",
+				"author": "joe@example.com"
+			}
+			],
+			"soldout": true
+		},
+		{
+			"name": "Salmon",
+			"price": 3.95,
+			"description": "This is a greaat gem",
+			"canPurchase": true,
+			"images" : [{
+				"full": "images/image2.jpg"
+			}],
+			"reviews": [
+			{
+				"stars":3,
+				"body": "This is a great product",
+				"author": "pani@example.com"
+			}
+			],
+			"soldout": true
+		}
+
+	]
