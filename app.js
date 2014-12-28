@@ -1,14 +1,22 @@
 (function() {
 	var app = angular.module('store', []);
-	
-	app.controller('StoreController', function() {
-		this.products = gems;
+
+	app.controller('ReviewController', function() {
+		this.review = {};
+
+		this.addReview = function(product) {
+			alert(JSON.stringify(this.review));
+			alert(product.reviews);
+			product.reviews.push(this.review);
+		}
 	});
 
-	app.controller('PanelController', function() {
+	
+	app.controller("PanelController", function() {
+		//alert("In panel");
 		this.tab = 1;
 		this.selectTab = function(setTab) {
-			alert(setTab);
+			//alert(setTab);
 			this.tab = setTab;
 		};
 
@@ -16,6 +24,11 @@
 			return this.tab === checkTab;
 		};
 	});
+
+	app.controller('StoreController', function() {
+		this.products = gems;
+	});
+
 
 	var gems = [
 		{
