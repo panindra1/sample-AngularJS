@@ -1,6 +1,15 @@
 (function() {
 	var app = angular.module('store', []);
 
+	//custom directives
+	app.directive('productTitle', function() {
+		return {
+			restrict: 'E',
+			templateUrl: 'productInfo.html'
+		};
+	});
+
+
 	app.controller('ReviewController', function() {
 		this.review = {};
 
